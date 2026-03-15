@@ -18,7 +18,7 @@ jobs:
     needs: build
     steps:
       - name: code checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: run tests on main branches
         run: laura test
