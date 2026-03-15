@@ -1,6 +1,9 @@
 name: Gaurab
 on:
-  push:
+  #  push:
+  #    branches: ["main"]
+
+  pull_request:
     branches: ["main"]
 
 jobs:
@@ -9,6 +12,8 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: maven build
         run: mvn install
@@ -19,6 +24,8 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: run tests on main branches
         run: mvn test
