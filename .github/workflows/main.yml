@@ -27,7 +27,7 @@ jobs:
         run: mvn install
 
       - name: Upload Build Artifact (WAR)
-        run: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v6
         with:
           name: vprofile-app
           path: target/*.war
